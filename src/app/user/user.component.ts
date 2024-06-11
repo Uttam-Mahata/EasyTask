@@ -1,4 +1,6 @@
 import { Component, Input, input, computed, EventEmitter, Output, output} from '@angular/core';
+import {User} from "./user.model";
+
 
 
 @Component({
@@ -9,11 +11,8 @@ import { Component, Input, input, computed, EventEmitter, Output, output} from '
   styleUrl: './user.component.css'
 })
 export class UserComponent {
-  @Input({required: true}) user!:{
-    id: string;
-    avatar: string;
-    name: string;
-  } ;
+  @Input({required: true}) user!: User;
+  @Input({required: true}) selected!: boolean;
   // @Input({required: true}) id!: string;
   // @Input({required: true}) avatar!: string;
   // @Input({required: true}) name!: string;
