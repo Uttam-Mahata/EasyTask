@@ -2,16 +2,19 @@
 * {
     box-sizing: border-box;
   }
-  
+
   html {
     height: 100%;
   }
-  
+
   body {
     font-family: "Poppins", sans-serif;
-    background: radial-gradient(circle at top left, #181023, #0b0519);
-    color: #c3b3d8;
+
+    background: radial-gradient(circle at top left, #e4e2e6, #e7e5ec);
+    color: #080112;
     margin: 0;
     padding: 0;
     height: 100%;
   }
+/*html, body { height: 100%; }*/
+

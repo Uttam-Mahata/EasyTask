@@ -1,23 +1,40 @@
 <app-header></app-header>
 <main>
     <ul id="users">
+<!--angular 17 for -->
+      @for (user of users; track user.id) {
+
         <li>
-            <app-user [avatar]="users[0].avatar" [name]="users[0].name"></app-user>
+          <app-user [user]="user"
+                    (select)="onSelectUser($event)"></app-user>
 
         </li>
-        <li>
-            <app-user [avatar]="users[1].avatar" [name]="users[1].name"></app-user>
 
-        </li>
-        <li> 
-            <app-user [avatar]="users[2].avatar" [name]="users[2].name"></app-user>
-        </li>
-        <li> 
-            <app-user [avatar]="users[3].avatar" [name]="users[3].name"></app-user>
-        </li>
-        <li> 
-            <app-user [avatar]="users[4].avatar" [name]="users[4].name"></app-user>
-        </li>
+      }
+
+
+<!--      <li *ngFor="let user of users">-->
+<!--        <app-user [user]="user"-->
+<!--                  (select)="onSelectUser($event)"></app-user>-->
+
+<!--      </li>-->
 
     </ul>
+  @if (selectedUser) {
+
+    <app-tasks [name]="selectedUser.name
+   "></app-tasks>
+
+  }
+
+  @else {
+    <p id="fallback">Select a user to see their tasks!</p>
+
+  }
+<!--  <app-tasks *ngIf="selectedUser; else fallback" [name]="selectedUser!.name-->
+<!--   "></app-tasks>-->
+<!--<ng-template #fallback>-->
+<!--  <p id="fallback">Select a user to see their tasks!</p>-->
+<!--</ng-template>-->
+
 </main>
