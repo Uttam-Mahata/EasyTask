@@ -34,7 +34,7 @@ getUserTasks(userId: string) {
       }
 
       addTask(taskData: { title: string; summary: string; date: string }, userId: string) {
-        this.tasks.push({
+        this.tasks.unshift({
           id: Math.random().toString(),
           userId: userId,
           title: taskData.title,
