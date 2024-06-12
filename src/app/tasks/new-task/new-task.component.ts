@@ -1,6 +1,13 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {FormsModule} from "@angular/forms";
 
+interface NewTaskData {
+  title: string;
+  summary: string;
+  date: string;
+
+}
+
 @Component({
   selector: 'app-new-task',
   standalone: true,
@@ -12,7 +19,7 @@ import {FormsModule} from "@angular/forms";
 })
 export class NewTaskComponent {
 @Output() cancel= new EventEmitter();
-@Output() addTask = new EventEmitter<{title: string, summary: string, date: string}>();
+@Output() addTask = new EventEmitter<NewTaskData>();
 enteredTitle = '';
 enteredSummary: string = '';
 enteredDate:string = '';
