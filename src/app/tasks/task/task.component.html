@@ -3,7 +3,7 @@
     <h2>{{task.title}}</h2>
     <time>
       DUE DATE
-      : {{task.dueDate}}
+      : {{task.dueDate | date: 'fullDate'}}
     </time>
     <p>
       {{task.summary}}
